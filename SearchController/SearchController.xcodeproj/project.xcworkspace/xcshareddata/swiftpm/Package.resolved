@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/what3words/w3w-swift-components.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "71770cd6be1aca4323e9c371136ae11191ba0d27"
+        "revision" : "71770cd6be1aca4323e9c371136ae11191ba0d27",
+        "version" : "2.3.3"
       }
     },
     {

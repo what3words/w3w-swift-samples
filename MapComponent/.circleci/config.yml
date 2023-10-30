@@ -1,0 +1,36 @@
+version: 2.1
+
+jobs: # a basic unit of work in a run
+    build: # your job name
+        macos:
+            xcode: 15.0.0
+        resource_class: macos.x86.medium.gen2
+        environment:
+            FL_OUTPUT_DIR: output
+        shell: /bin/bash --login -o pipefail
+        steps:
+            - checkout
+            - restore_cache:
+                key: spm-cache-{{ checksum "w3w.xcworkspace/xcshareddata/swiftpm/Package.resolved" }}
+            - run: bundle check || bundle install --path vendor/bundle
+            - run:
+                name: fastlane
+                command: bundle exec fastlane $FL_COMMAND
+            - save_cache:
+                paths:
+                    - SourcePackages/
+                key: spm-cache-{{ checksum "w3w.xcworkspace/xcshareddata/swiftpm/Package.resolved" }}
+            - store_artifacts:
+                path: build/app.ipa
+          
+workflows:
+  version: 2
+    build_and_test:
+        jobs:
+        - build:
+            filters:
+                tags:
+                    only: /^v.*/
+            context:
+                - org-global
+                - mobile

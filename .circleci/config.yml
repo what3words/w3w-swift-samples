@@ -2,13 +2,13 @@ version: 2.1
 
 jobs:
     build-and-test:
-    macos:
-        xcode: 14.2.0
-    steps:
-        - checkout  # pull down code from
-        - run:
-            name: Update to latest package versions and build
-            command: |-
+        macos:
+            xcode: 14.2.0
+        steps:
+            - checkout  # pull down code from
+            - run:
+                name: Update to latest package versions and build
+                command: |-
                     for i in `ls -d */`
                     do
                         folder="${i%/*}"
@@ -21,15 +21,15 @@ jobs:
                         fi
                         cd ..
                     done
-                    
+
 workflows:
     version: 2
     test_build:
-    jobs:
-        - build-and-test:
-            filters:
-            tags:
-                only: /^v.*/
-            context:
-            - org-global
-            - mobile
+        jobs:
+            - build-and-test:
+                filters:
+                tags:
+                    only: /^v.*/
+                context:
+                    - org-global
+                    - mobile

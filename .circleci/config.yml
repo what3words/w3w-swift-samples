@@ -27,9 +27,6 @@ workflows:
     test_build:
         jobs:
             - build-and-test:
-                filters:
-                tags:
-                    only: /^v.*/
                 context:
                     - org-global
                     - mobile

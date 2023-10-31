@@ -1,0 +1,35 @@
+version: 2.1
+
+jobs:
+    build-and-test:
+    macos:
+        xcode: 14.2.0
+    steps:
+        - checkout  # pull down code from
+        - run:
+            name: Update to latest package versions and build
+            command: |-
+                    for i in `ls -d */`
+                    do
+                        folder="${i%/*}"
+                        cd $folder
+                        xcodebuild -resolvePackageDependencies
+                        if [ $folder == "ConvertToCoords" ]; then
+                            xcodebuild -project $folder.xcodeproj -scheme $folder -sdk macosx -destination 'platform=OS X,arch=x86_64' PROD_API_KEY=$PROD_API_KEY build
+                        else
+                            xcodebuild -project $folder.xcodeproj -scheme $folder -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' PROD_API_KEY=$PROD_API_KEY build
+                        fi
+                        cd ..
+                    done
+                    
+workflows:
+    version: 2
+    test_build:
+    jobs:
+        - build-and-test:
+            filters:
+            tags:
+                only: /^v.*/
+            context:
+            - org-global
+            - mobile

@@ -1,0 +1,36 @@
+version: 2.1
+
+jobs:
+    update-and-build:
+        macos:
+            xcode: 14.2.0
+        steps:
+            - checkout  # pull down code from
+            - run:
+                name: Update to latest package versions and build
+                command: |-
+                    for folder in `ls -d */`
+                    do
+                        cd "${folder%/*}"
+                        if ls *.xcodeproj &> /dev/null; then
+                            for proj_file in *.xcodeproj; do
+                                if [ -f "build.sh" ]; then
+                                    sh build.sh
+                                else
+                                    proj_name="${proj_file%.*}"
+                                    xcodebuild -resolvePackageDependencies
+                                    xcodebuild -project $proj_name.xcodeproj -scheme $proj_name -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' PROD_API_KEY=$PROD_API_KEY build
+                                fi
+                            done
+                        fi
+                        cd ..
+                    done
+
+workflows:
+    version: 2
+    update-and-build:
+        jobs:
+            - update-and-build:
+                context:
+                    - org-global
+                    - mobile

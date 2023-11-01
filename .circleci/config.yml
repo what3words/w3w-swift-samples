@@ -9,14 +9,19 @@ jobs:
             - run:
                 name: Update to latest package versions and build
                 command: |-
-                    for i in `ls -d */`
+                    for folder in `ls -d */`
                     do
-                        folder="${i%/*}"
-                        cd $folder
-                        xcodebuild -resolvePackageDependencies
-                        BUILD_FILE="build.sh"
-                        if [ -f "$BUILD_FILE" ]; then
-                            sh build.sh
+                        cd "${folder%/*}"
+                        if ls *.xcodeproj &> /dev/null; then
+                            for proj_file in *.xcodeproj; do
+                                if [ -f "build.sh" ]; then
+                                    sh build.sh
+                                else
+                                    proj_name="${proj_file%.*}"
+                                    xcodebuild -resolvePackageDependencies
+                                    xcodebuild -project $proj_name.xcodeproj -scheme $proj_name -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' PROD_API_KEY=$PROD_API_KEY build
+                                fi
+                            done
                         fi
                         cd ..
                     done

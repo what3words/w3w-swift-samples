@@ -15,6 +15,8 @@
 		015AD73627FDDBA200F6B11E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015AD73427FDDBA200F6B11E /* LaunchScreen.storyboard */; };
 		015AD74227FDDD1B00F6B11E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015AD74127FDDD1B00F6B11E /* Colors.xcassets */; };
 		760FA3E82AEE4AB400EA23FA /* W3WSwiftComponentsOcr in Frameworks */ = {isa = PBXBuildFile; productRef = 760FA3E72AEE4AB400EA23FA /* W3WSwiftComponentsOcr */; };
+		764461F72B3BC43900094AB1 /* W3WSwiftApi in Frameworks */ = {isa = PBXBuildFile; productRef = 764461F62B3BC43900094AB1 /* W3WSwiftApi */; };
+		764461F92B3BC43900094AB1 /* W3WSwiftVoiceApi in Frameworks */ = {isa = PBXBuildFile; productRef = 764461F82B3BC43900094AB1 /* W3WSwiftVoiceApi */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				760FA3E82AEE4AB400EA23FA /* W3WSwiftComponentsOcr in Frameworks */,
+				764461F72B3BC43900094AB1 /* W3WSwiftApi in Frameworks */,
+				764461F92B3BC43900094AB1 /* W3WSwiftVoiceApi in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,8 @@
 			name = OcrComponent;
 			packageProductDependencies = (
 				760FA3E72AEE4AB400EA23FA /* W3WSwiftComponentsOcr */,
+				764461F62B3BC43900094AB1 /* W3WSwiftApi */,
+				764461F82B3BC43900094AB1 /* W3WSwiftVoiceApi */,
 			);
 			productName = OcrComponent;
 			productReference = 015AD72627FDDBA100F6B11E /* OcrComponent.app */;
@@ -129,6 +135,7 @@
 			mainGroup = 015AD71D27FDDBA100F6B11E;
 			packageReferences = (
 				760FA3E62AEE4AB400EA23FA /* XCRemoteSwiftPackageReference "w3w-swift-components-ocr" */,
+				764461F52B3BC43900094AB1 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */,
 			);
 			productRefGroup = 015AD72727FDDBA100F6B11E /* Products */;
 			projectDirPath = "";
@@ -394,6 +401,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		764461F52B3BC43900094AB1 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/what3words/w3w-swift-wrapper.git";
+			requirement = {
+				branch = v4/main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -401,6 +416,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 760FA3E62AEE4AB400EA23FA /* XCRemoteSwiftPackageReference "w3w-swift-components-ocr" */;
 			productName = W3WSwiftComponentsOcr;
+		};
+		764461F62B3BC43900094AB1 /* W3WSwiftApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 764461F52B3BC43900094AB1 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */;
+			productName = W3WSwiftApi;
+		};
+		764461F82B3BC43900094AB1 /* W3WSwiftVoiceApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 764461F52B3BC43900094AB1 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */;
+			productName = W3WSwiftVoiceApi;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

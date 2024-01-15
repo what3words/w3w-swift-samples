@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import W3WSwiftApi
+import W3WSwiftComponentsOcr
+import W3WSwiftDesign
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,7 +19,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    guard let _ = (scene as? UIWindowScene) else { return }
+    guard let scene = (scene as? UIWindowScene) else { return }
+    window = UIWindow(windowScene: scene)
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let viewController = storyboard.instantiateViewController(withIdentifier: "W3WOcrStartViewController") as! W3WOcrStartViewController
+    let api = What3WordsV4(apiKey: "YourApiKey")
+    let ocr = W3WOcrNative(api)
+    let theme = W3WTheme.standard
+      .with(styles: .standard.with(fonts: W3WFonts(font: UIFont.systemFont(ofSize: 22.0, weight: .semibold))))
+      .with(colors: W3WColors(foreground: .white))
+    viewController.ocr = ocr
+    viewController.w3w = api
+    viewController.set(theme: theme)
+    window?.rootViewController = viewController
+    window?.makeKeyAndVisible()
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {

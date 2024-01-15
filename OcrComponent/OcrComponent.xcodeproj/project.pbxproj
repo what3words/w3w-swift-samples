@@ -9,19 +9,18 @@
 /* Begin PBXBuildFile section */
 		015AD72A27FDDBA100F6B11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015AD72927FDDBA100F6B11E /* AppDelegate.swift */; };
 		015AD72C27FDDBA100F6B11E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015AD72B27FDDBA100F6B11E /* SceneDelegate.swift */; };
-		015AD72E27FDDBA100F6B11E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015AD72D27FDDBA100F6B11E /* ViewController.swift */; };
 		015AD73127FDDBA100F6B11E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015AD72F27FDDBA100F6B11E /* Main.storyboard */; };
 		015AD73327FDDBA200F6B11E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015AD73227FDDBA200F6B11E /* Assets.xcassets */; };
 		015AD73627FDDBA200F6B11E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015AD73427FDDBA200F6B11E /* LaunchScreen.storyboard */; };
 		015AD74227FDDD1B00F6B11E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015AD74127FDDD1B00F6B11E /* Colors.xcassets */; };
 		760FA3E82AEE4AB400EA23FA /* W3WSwiftComponentsOcr in Frameworks */ = {isa = PBXBuildFile; productRef = 760FA3E72AEE4AB400EA23FA /* W3WSwiftComponentsOcr */; };
+		7637113E2B555EFA002F4DD7 /* W3WSwiftApi in Frameworks */ = {isa = PBXBuildFile; productRef = 7637113D2B555EFA002F4DD7 /* W3WSwiftApi */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		015AD72627FDDBA100F6B11E /* OcrComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OcrComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015AD72927FDDBA100F6B11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		015AD72B27FDDBA100F6B11E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		015AD72D27FDDBA100F6B11E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		015AD73027FDDBA100F6B11E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		015AD73227FDDBA200F6B11E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		015AD73527FDDBA200F6B11E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				760FA3E82AEE4AB400EA23FA /* W3WSwiftComponentsOcr in Frameworks */,
+				7637113E2B555EFA002F4DD7 /* W3WSwiftApi in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,6 @@
 			children = (
 				015AD72927FDDBA100F6B11E /* AppDelegate.swift */,
 				015AD72B27FDDBA100F6B11E /* SceneDelegate.swift */,
-				015AD72D27FDDBA100F6B11E /* ViewController.swift */,
 				015AD72F27FDDBA100F6B11E /* Main.storyboard */,
 				015AD73227FDDBA200F6B11E /* Assets.xcassets */,
 				015AD74127FDDD1B00F6B11E /* Colors.xcassets */,
@@ -98,6 +97,7 @@
 			name = OcrComponent;
 			packageProductDependencies = (
 				760FA3E72AEE4AB400EA23FA /* W3WSwiftComponentsOcr */,
+				7637113D2B555EFA002F4DD7 /* W3WSwiftApi */,
 			);
 			productName = OcrComponent;
 			productReference = 015AD72627FDDBA100F6B11E /* OcrComponent.app */;
@@ -129,6 +129,7 @@
 			mainGroup = 015AD71D27FDDBA100F6B11E;
 			packageReferences = (
 				760FA3E62AEE4AB400EA23FA /* XCRemoteSwiftPackageReference "w3w-swift-components-ocr" */,
+				7637113C2B555EFA002F4DD7 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */,
 			);
 			productRefGroup = 015AD72727FDDBA100F6B11E /* Products */;
 			projectDirPath = "";
@@ -158,7 +159,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				015AD72E27FDDBA100F6B11E /* ViewController.swift in Sources */,
 				015AD72A27FDDBA100F6B11E /* AppDelegate.swift in Sources */,
 				015AD72C27FDDBA100F6B11E /* SceneDelegate.swift in Sources */,
 			);
@@ -394,6 +394,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		7637113C2B555EFA002F4DD7 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/what3words/w3w-swift-wrapper.git";
+			requirement = {
+				branch = v4/main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -401,6 +409,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 760FA3E62AEE4AB400EA23FA /* XCRemoteSwiftPackageReference "w3w-swift-components-ocr" */;
 			productName = W3WSwiftComponentsOcr;
+		};
+		7637113D2B555EFA002F4DD7 /* W3WSwiftApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7637113C2B555EFA002F4DD7 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */;
+			productName = W3WSwiftApi;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

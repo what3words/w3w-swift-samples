@@ -12,7 +12,7 @@ import W3WSwiftComponentsOcr
 
 class ViewController: UIViewController {
 
-  let api = What3WordsV4(apiKey: "YourApiKey")
+  let api = What3WordsV3(apiKey: "YourApiKey")
   lazy var ocr = W3WOcrNative(api)
   lazy var ocrViewController = W3WOcrViewController(ocr: ocr)
   
@@ -29,12 +29,8 @@ class ViewController: UIViewController {
     
     // when it finds an address, show it in the viewfinder
     ocrViewController.onSuggestions = { [weak self] suggestions in
-      if let suggestion = suggestions.first, let words = suggestion.words {
-        self?.api.autosuggest(text: words, completion: { [weak self] (suggestions, error) in
-          DispatchQueue.main.async {
-            self?.ocrViewController.insertMoreAutoSuggestions(suggestions ?? [])
-          }
-        })
+      if let suggestion = suggestions.first {
+        self?.ocrViewController.show(suggestion: suggestion)
       }
       // Or, maybe stop on result
       //self?.ocrViewController.stop()

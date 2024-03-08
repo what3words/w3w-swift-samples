@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     // make the API
     let apiKey = "YourApiKey"
-    let api = What3WordsV3(apiKey: apiKey)
+    let api = What3WordsV4(apiKey: apiKey)
 
     // make the text field
     let textField = W3WAutoSuggestTextField(frame: CGRect(x: 16.0, y: (UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height ?? 64.0) + 16.0, width: view.frame.size.width - 32.0, height: 32.0))

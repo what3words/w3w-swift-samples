@@ -84,14 +84,3 @@ This demonstrates our `W3WOcrViewController` which uses the camera to scan for t
 ### VoiceAPI
 
 This example shows how to use our Voice API to recognise a spoken three word address.
-
-## Objective-C Compatible
-
-#### ObjectiveC
-
-An example showing how to use an Autosuggest Component in Objective-C.
-
-#### ApiWrapperObjectiveC
-
-An exmaple showing how to use our API wrapper with Objective C.
-

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
   // instantiate the API on launch: place your API key here
   // get your API key at: https://what3words.com/select-plan
   // upgrade your API key to voice here: https://accounts.what3words.com/billing
-  var api = What3WordsV3(apiKey: "YourApiKey")
+  var api = What3WordsV4(apiKey: "YourApiKey")
 
   // a button to talk and a text label for displaying results
   @IBOutlet weak var microphoneButton: UIButton!
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     let microphone = W3WMicrophone()
 
     print("Starting recording")
-    api.autosuggest(audio: microphone, language: "en") { suggestions, error in
+    api.autosuggest(audio: microphone, options: .voiceLanguage("42")) { suggestions, error in
 
       print("Finished recording")
       DispatchQueue.main.async {

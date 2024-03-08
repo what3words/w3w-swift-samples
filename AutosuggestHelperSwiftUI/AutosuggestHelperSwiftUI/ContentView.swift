@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import W3WSwiftCore
 import W3WSwiftApi
 
 

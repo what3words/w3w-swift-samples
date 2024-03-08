@@ -20,7 +20,7 @@ import W3WSwiftComponents
 
 class ViewController: W3WMapViewController {
   
-  let api = What3WordsV3(apiKey: "Your API Key")
+  let api = What3WordsV4(apiKey: "Your API Key")
   
   override func viewDidLoad() {
     super.viewDidLoad()

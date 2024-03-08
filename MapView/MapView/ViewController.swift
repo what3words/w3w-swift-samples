@@ -26,7 +26,7 @@ import W3WSwiftComponents
 
 class ViewController: UIViewController {
   
-  let api = What3WordsV3(apiKey: "YourApiKey")
+  let api = What3WordsV4(apiKey: "YourApiKey")
   
   /// assign the `MKMapView` as the default view
   public override func loadView() {

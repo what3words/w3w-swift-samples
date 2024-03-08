@@ -12,10 +12,10 @@
     {
       "identity" : "w3w-swift-wrapper",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/what3words/w3w-swift-wrapper.git",
+      "location" : "git@github.com:what3words/w3w-swift-wrapper.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "dbe89646efe5e6eb68e35d0b20ccd686d2d32f1e"
+        "revision" : "dbe89646efe5e6eb68e35d0b20ccd686d2d32f1e",
+        "version" : "3.9.6"
       }
     }
   ],

@@ -14,14 +14,14 @@ import W3WSwiftApi
 
 class Model: ObservableObject {
   
-  var api = What3WordsV3(apiKey: "<Your API Key>")
+  var api = What3WordsV4(apiKey: "<Your API Key>")
   
   @Published var suggestions = [W3WSuggestion]()
   @Published var error: String?
 
   init() {
     // get results from the partial three word address for Great Britain (GB)
-    api.autosuggest(text: "filled.count.soa", options: W3WOptions().clipToCountry("GB")) { suggestions, error in
+    api.autosuggest(text: "filled.count.soa", options: W3WOptions().clip(to W3WApiCountry(code: "GB"))) { suggestions, error in
       DispatchQueue.main.async { // ensure this runs on the main thread as it updates the UI
         if let e = error {
           self.error = String(describing: e)

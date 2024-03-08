@@ -50,7 +50,7 @@ class TableViewController: UITableViewController, UISearchResultsUpdating, UISea
   var regularAddressResults = [MKLocalSearchCompletion]()
 
   // WHAT3WORDS AUTOSUGGEST HELPER
-  var autosuggest = W3WAutosuggestHelper(What3WordsV3(apiKey: "YourApiKey"))
+  var autosuggest = W3WAutoSuggestHelper(What3WordsV4(apiKey: "YourApiKey"))
   
   let locationInLondon = CLLocationCoordinate2D(latitude: 51.520847, longitude: -0.195521)
   
@@ -83,7 +83,7 @@ class TableViewController: UITableViewController, UISearchResultsUpdating, UISea
         regularAddressSearcher.queryFragment = text
         
         // UPDATE WHAT3WORDS SEARCH, AND ON COMPLETION, RELOAD THE TABLE
-        autosuggest.update(text: text, options: [W3WOption.focus(locationInLondon)]) { error in
+        autosuggest.update(text: text, options: [W3WOption.focus(locationInLondon)]) { suggestions, error in
           self.tableView.reloadData()
           
           // IF AN ERROR HAPPENED, SHOW IT ON SCREEN

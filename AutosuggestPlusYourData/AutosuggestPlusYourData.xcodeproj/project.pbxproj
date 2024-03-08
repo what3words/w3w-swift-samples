@@ -368,7 +368,7 @@
 			repositoryURL = "https://github.com/what3words/w3w-swift-wrapper.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -5,8 +5,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/what3words/w3w-swift-components.git",
       "state" : {
-        "revision" : "71770cd6be1aca4323e9c371136ae11191ba0d27",
-        "version" : "2.3.3"
+        "revision" : "6ed04be4011d86642d1f8b9bbab8ac118bedbd86",
+        "version" : "3.0.0"
+      }
+    },
+    {
+      "identity" : "w3w-swift-core",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:what3words/w3w-swift-core.git",
+      "state" : {
+        "revision" : "76e240b3c60d30fe814f8d1c0d4990d65a984af3",
+        "version" : "1.0.0"
       }
     },
     {
@@ -14,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/what3words/w3w-swift-wrapper.git",
       "state" : {
-        "revision" : "0657a3a062bc4e09f6bdb705fefbf54c524bcd76",
-        "version" : "3.9.5"
+        "revision" : "a83c2ba97096b083a410ce348e0f555df9687fd4",
+        "version" : "4.0.0"
       }
     }
   ],

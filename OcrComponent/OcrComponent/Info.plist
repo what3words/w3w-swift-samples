@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Enter a what3words address using scan or take a photo</string>
 </dict>
 </plist>

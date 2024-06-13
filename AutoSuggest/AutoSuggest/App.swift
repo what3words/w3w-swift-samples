@@ -21,7 +21,7 @@ class Model: ObservableObject {
 
   init() {
     // get results from the partial three word address for Great Britain (GB)
-    api.autosuggest(text: "filled.count.soa", options: W3WOptions().clip(to W3WApiCountry(code: "GB"))) { suggestions, error in
+    api.autosuggest(text: "filled.count.soa", options: W3WOptions().clip(to: W3WApiCountry(code: "GB"))) { suggestions, error in
       DispatchQueue.main.async { // ensure this runs on the main thread as it updates the UI
         if let e = error {
           self.error = String(describing: e)
@@ -48,7 +48,7 @@ struct ContentView: View {
       List(model.suggestions, id: \.self.words) { suggestion in
         VStack(alignment: .leading) {
           Text("///").foregroundColor(.accentColor) + Text(suggestion.words ?? "")
-          Text((suggestion.nearestPlace ?? "") + ", " + (suggestion.country ?? ""))
+          Text((suggestion.nearestPlace ?? ""))
             .font(.footnote)
             .foregroundColor(.gray)
         }

@@ -2,56 +2,64 @@
 //  ViewController.swift
 //  OcrComponent
 //
-//  Created by Dave Duprey on 06/04/2022.
+//  Created by Dave Duprey on 21/05/2024.
 //
 
-import UIKit
 import W3WSwiftApi
 import W3WSwiftComponentsOcr
+import W3WSwiftDesign
 
 
-class ViewController: UIViewController {
+/// Start View Controller is a convenience controller for launching the component
+/// which includes a callback that respondes to a user pressing "Start Scanning"
+class ViewController: W3WOcrStartViewController {
+  
+  /// the what3words API
+  lazy var api = What3WordsV4(apiKey: "Your what3words API key")
 
-  let api = What3WordsV3(apiKey: "YourApiKey")
+  /// the what3words OCR word rcogniser
   lazy var ocr = W3WOcrNative(api)
-  lazy var ocrViewController = W3WOcrViewController(ocr: ocr)
-  
-  // scan button
-  @IBOutlet weak var scanButton: UIButton!
   
   
-  @IBAction func scanButtonPressed(_ sender: Any) {
-    // show the OCR ViewController
-    self.show(ocrViewController, sender: self)
+  /// Show and start the OCR component, this function is called
+  /// by a button on the root view (see viewDidLoad() below)
+  /// Use a function like this to make, show, and run the OCR
+  func launchOcr() {
     
-    // start the OCR processing images
+    // make the component
+    let ocrViewController = W3WOcrViewController(ocr: ocr, theme: .what3words, w3w: api)
+    
+    // show the component
+    present(ocrViewController, animated: true)
+    
+    // start the component
     ocrViewController.start()
     
-    // when it finds an address, show it in the viewfinder
-    ocrViewController.onSuggestions = { [weak self] suggestions in
-      if let suggestion = suggestions.first {
-        self?.ocrViewController.show(suggestion: suggestion)
-      }
-      // Or, maybe stop on result
-      //self?.ocrViewController.stop()
+    // when the user taps on a suggestion, stop and dismiss the component
+    ocrViewController.onSuggestionSelected = { suggestion in
+      print(suggestion)
+      
+      ocrViewController.stop()
+      ocrViewController.dismiss(animated: true)
     }
+    
+    ocrViewController.onError = { error in
+      print(error)
+    }
+  }
+  
 
-    // if there is an error show the u ser
-    ocrViewController.onError = { [weak self] error in
-      self?.ocrViewController.stop()
-      self?.showError(error: error)
+  // set up a simple view with a start button
+  override public func viewDidLoad() {
+    super.viewDidLoad()
+
+    // Sets the theme.  You can make custom `W3WTheme`s to adjust colours and styles to suit, or start with standard and modify
+    set(theme: .standard.with(background: W3WColor(light: .white, dark: .black)))
+    
+    // launch the ocr component when the button is pressed
+    onButtonPressed = { [weak self] in
+      self?.launchOcr()
     }
   }
-  
-  
-  /// display an error using a UIAlertController, error messages conform to CustomStringConvertible
-  func showError(error: Error) {
-    DispatchQueue.main.async { [weak self] in
-      let alert = UIAlertController(title: "Error", message: String(describing: error), preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-      self?.ocrViewController.present(alert, animated: true)
-    }
-  }
-  
+    
 }
-

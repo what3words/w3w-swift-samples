@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     let microphone = W3WMicrophone()
 
     print("Starting recording")
-    api.autosuggest(audio: microphone, options: .voiceLanguage("42")) { suggestions, error in
+    api.autosuggest(audio: microphone, options: .voiceLanguage("en")) { suggestions, error in
 
       print("Finished recording")
       DispatchQueue.main.async {

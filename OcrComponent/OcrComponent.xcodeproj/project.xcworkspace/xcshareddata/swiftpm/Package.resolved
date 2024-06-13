@@ -5,17 +5,44 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/what3words/w3w-swift-components-ocr.git",
       "state" : {
-        "revision" : "fc9624817b43e3cdcfb56d729cf55df2547e1efc",
-        "version" : "1.1.6"
+        "branch" : "task/MT-6811-touch-ups",
+        "revision" : "77303ceaa079c6eac4dd5d1b41b4852d3118c552"
+      }
+    },
+    {
+      "identity" : "w3w-swift-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/what3words/w3w-swift-core",
+      "state" : {
+        "revision" : "66e15157c8a355d55dfa019740667315ee56d9bc",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "w3w-swift-design",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/what3words/w3w-swift-design.git",
+      "state" : {
+        "branch" : "staging",
+        "revision" : "7d5e719405ad411bd149b7a4acf794b0477e4bf8"
+      }
+    },
+    {
+      "identity" : "w3w-swift-themes",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:what3words/w3w-swift-themes.git",
+      "state" : {
+        "revision" : "c08252b414885425a54332bba9ddb2f9a31c9d76",
+        "version" : "1.1.4"
       }
     },
     {
       "identity" : "w3w-swift-wrapper",
       "kind" : "remoteSourceControl",
-      "location" : "git@github.com:what3words/w3w-swift-wrapper.git",
+      "location" : "https://github.com/what3words/w3w-swift-wrapper.git",
       "state" : {
-        "revision" : "dbe89646efe5e6eb68e35d0b20ccd686d2d32f1e",
-        "version" : "3.9.6"
+        "revision" : "a83c2ba97096b083a410ce348e0f555df9687fd4",
+        "version" : "4.0.0"
       }
     }
   ],

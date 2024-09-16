@@ -77,10 +77,17 @@ We created W3WMapView as a quick and dirty way to quickly get what3words functio
 
 #### OcrComponent
 
-This demonstrates our `W3WOcrViewController` which uses the camera to scan for three-word addresses.  It uses our OCR systems which conform to our `W3WOcrProtocol`.  We include a class called `W3WOcrNative` which does and uses Apple's Vision Framework to employ hardware-accelerated optical character recognition.
+This demonstrates our `W3WOcrViewController` which uses the camera to scan for three-word addresses.  Included is a class called `W3WOcrNative` which uses Apple's Vision Framework to employ hardware-accelerated optical character recognition.
 
 ## Voice
 
 ### VoiceAPI
 
 This example shows how to use our Voice API to recognise a spoken three word address.
+
+## Regex
+
+### ThreeWordAddressRegex
+
+This example shows how to call our convenience functions that use regex to find three word addresses in text.  The functions demonstrated are: `isPossible3wa(text: String)`, `findPossible3wa(text: String)`, `isValid3wa(words: String)`.
+

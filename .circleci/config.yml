@@ -3,7 +3,7 @@ version: 2.1
 jobs:
     update-and-build:
         macos:
-            xcode: 14.3.0
+            xcode: 15.3.0
         steps:
             - checkout  # pull down code from
             - run:

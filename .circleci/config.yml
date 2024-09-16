@@ -19,7 +19,7 @@ jobs:
                                 else
                                     proj_name="${proj_file%.*}"
                                     xcodebuild -resolvePackageDependencies
-                                    xcodebuild -project $proj_name.xcodeproj -scheme $proj_name -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14' PROD_API_KEY=$PROD_API_KEY build
+                                    xcodebuild -project $proj_name.xcodeproj -scheme $proj_name -sdk iphonesimulator PROD_API_KEY=$PROD_API_KEY build
                                 fi
                             done
                         fi

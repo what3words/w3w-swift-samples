@@ -5,6 +5,7 @@
 //  Created by Dave Duprey on 21/05/2024.
 //
 
+import UIKit
 import W3WSwiftApi
 import W3WSwiftComponentsOcr
 import W3WSwiftDesign
@@ -15,7 +16,7 @@ import W3WSwiftDesign
 class ViewController: W3WOcrStartViewController {
   
   /// the what3words API
-  lazy var api = What3WordsV4(apiKey: "Your what3words API key")
+  lazy var api = What3WordsV4(apiKey: "YourApiKey") // sign up for an api key here: https://developer.what3words.com/public-api
 
   /// the what3words OCR word rcogniser
   lazy var ocr = W3WOcrNative(api)
@@ -36,8 +37,8 @@ class ViewController: W3WOcrStartViewController {
     ocrViewController.start()
     
     // when the user taps on a suggestion, stop and dismiss the component
-    ocrViewController.onSuggestionSelected = { suggestion in
-      print(suggestion)
+    ocrViewController.onSuggestionSelected = { [weak self] suggestion in
+      self?.notify(title: "Result:", message: suggestion.description)
       
       ocrViewController.stop()
       ocrViewController.dismiss(animated: true)
@@ -61,5 +62,17 @@ class ViewController: W3WOcrStartViewController {
       self?.launchOcr()
     }
   }
-    
+
+
+  // MARK: - Popup Message
+  
+  
+  func notify(title: String, message: String) {
+    DispatchQueue.main.async { [weak self] in
+      let note = UIAlertController(title: title, message: message, preferredStyle: .alert)
+      note.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { _ in }))
+      self?.present(note, animated: true) { }
+    }
+  }
+  
 }

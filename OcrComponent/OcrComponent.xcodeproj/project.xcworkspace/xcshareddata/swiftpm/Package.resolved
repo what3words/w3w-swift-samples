@@ -1,12 +1,13 @@
 {
+  "originHash" : "c411b4a0cbe2d2de48fc7fb75ee01838f1ad45d3b1a6ea17033ea8db9c669227",
   "pins" : [
     {
       "identity" : "w3w-swift-components-ocr",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/what3words/w3w-swift-components-ocr.git",
       "state" : {
-        "branch" : "task/MT-6811-touch-ups",
-        "revision" : "77303ceaa079c6eac4dd5d1b41b4852d3118c552"
+        "revision" : "ef70f0ca6a4d249fe5a49d3d5b5d04c3b5cef0c6",
+        "version" : "2.0.0"
       }
     },
     {
@@ -23,14 +24,14 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/what3words/w3w-swift-design.git",
       "state" : {
-        "branch" : "staging",
-        "revision" : "7d5e719405ad411bd149b7a4acf794b0477e4bf8"
+        "revision" : "eba0e638bd8d143e7dc0be6f4e4a54e9f1d9e754",
+        "version" : "1.0.7"
       }
     },
     {
       "identity" : "w3w-swift-themes",
       "kind" : "remoteSourceControl",
-      "location" : "git@github.com:what3words/w3w-swift-themes.git",
+      "location" : "https://github.com/what3words/w3w-swift-themes.git",
       "state" : {
         "revision" : "c08252b414885425a54332bba9ddb2f9a31c9d76",
         "version" : "1.1.4"
@@ -46,5 +47,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

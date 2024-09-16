@@ -415,16 +415,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/what3words/w3w-swift-components-ocr.git";
 			requirement = {
-				branch = "task/MT-6811-touch-ups";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		01D8D0C12C00D9EB00A54F23 /* XCRemoteSwiftPackageReference "w3w-swift-design" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/what3words/w3w-swift-design.git";
 			requirement = {
-				branch = staging;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		764461F52B3BC43900094AB1 /* XCRemoteSwiftPackageReference "w3w-swift-wrapper" */ = {

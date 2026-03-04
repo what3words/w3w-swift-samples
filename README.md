@@ -70,6 +70,9 @@ If you have a ViewController that has a map, `W3WMapHelper` provides convenience
 
 We created W3WMapView as a quick and dirty way to quickly get what3words functionality into your app.  Simply replace your MKMapView with W3WMapView, and your app should behave the same as before except it will draw what3words grid lines, and have some new functions available, like `addMarker(at: "filled.count.soap")`. Apple does not recommend deriving new objects from MKMapView as its interface could change in the future, so view this as a quick and dirty way to get the functionality into your app. The better approach would be to use `W3WMapHelper` which is designed to fit nicely into your `MKMapViewDelegate` conforming class, presumably a UIViewController.
 
+#### SwiftUI Map
+
+An example SwiftUI app that draws what3words gridlines and annotations on iOS' SwiftUI map view.  `MapViewModel` makes the API calls and holds `@Published` variables holding gridline and square data.  These data are bound with `MapView`, a SwiftUI map view.  The initial state is set up in `MapSwiftUIApp` where a list of three word addresses, along with a map centrepoint are specified.
 
 
 ## OCR (Optical Character Recognition)

@@ -10,7 +10,7 @@ import CoreLocation
 import W3WSwiftApi
 
 
-var api = What3WordsV3(apiKey: "<Your API Key>")
+var api = What3WordsV4(apiKey: "<Your API Key>")
 
 api.convertToCoordinates(words: "filled.count.soap")  { (square, error) in
       

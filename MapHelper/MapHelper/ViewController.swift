@@ -20,7 +20,7 @@ import W3WSwiftComponents
 
 class ViewController: UIViewController, MKMapViewDelegate {
   
-  let api = What3WordsV3(apiKey: "Your API Key")
+  let api = What3WordsV4(apiKey: "Your API Key")
   var mapHelper: W3WMapHelper!
   
   

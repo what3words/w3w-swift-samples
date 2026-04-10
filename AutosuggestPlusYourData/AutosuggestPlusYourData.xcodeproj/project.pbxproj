@@ -39,6 +39,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01932ED62C08C1B200F06EA0 /* App Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				01B168A226EBABC600AAD30A /* AppDelegate.swift */,
+				01B168A426EBABC600AAD30A /* SceneDelegate.swift */,
+				01B168A826EBABC600AAD30A /* Main.storyboard */,
+				01B168AB26EBABC800AAD30A /* Assets.xcassets */,
+				01B168AD26EBABC800AAD30A /* LaunchScreen.storyboard */,
+			);
+			path = "App Stuff";
+			sourceTree = "<group>";
+		};
 		01B1689626EBABC500AAD30A = {
 			isa = PBXGroup;
 			children = (
@@ -59,12 +71,8 @@
 		01B168A126EBABC500AAD30A /* AutosuggestPlusYourData */ = {
 			isa = PBXGroup;
 			children = (
-				01B168A226EBABC600AAD30A /* AppDelegate.swift */,
-				01B168A426EBABC600AAD30A /* SceneDelegate.swift */,
+				01932ED62C08C1B200F06EA0 /* App Stuff */,
 				01B168BC26EBB00500AAD30A /* TableViewController.swift */,
-				01B168A826EBABC600AAD30A /* Main.storyboard */,
-				01B168AB26EBABC800AAD30A /* Assets.xcassets */,
-				01B168AD26EBABC800AAD30A /* LaunchScreen.storyboard */,
 				01B168B026EBABC800AAD30A /* Info.plist */,
 			);
 			path = AutosuggestPlusYourData;
@@ -368,7 +376,7 @@
 			repositoryURL = "https://github.com/what3words/w3w-swift-wrapper.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import W3WSwiftCore
 import W3WSwiftApi
 
 
@@ -19,11 +20,11 @@ struct SuggestionView: View {
       VStack(alignment: .leading) {
         Text("///").foregroundColor(.red) + Text((suggestion.words ?? ""))
         HStack {
-          Text((suggestion.nearestPlace ?? "") + ", " + (suggestion.country ?? ""))
+          Text((suggestion.nearestPlace ?? "") + ", " + (suggestion.country?.code ?? ""))
             .font(.footnote)
-          if let d = suggestion.distanceToFocus {
+          if let kilometers = suggestion.distanceToFocus?.kilometers {
             Spacer()
-            Text(String(format:"%.0fkm", d))
+            Text(String(format:"%.0fkm", kilometers))
               .font(.footnote)
           }
         }

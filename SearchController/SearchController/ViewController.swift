@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     // make the API
     let apiKey = "YourApiKey"
-    let api = What3WordsV3(apiKey: apiKey)
+    let api = What3WordsV4(apiKey: apiKey)
     
     // make a search field
     let search = W3WAutoSuggestSearchController()

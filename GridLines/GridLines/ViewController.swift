@@ -24,7 +24,7 @@ class ViewController: UIViewController, MKMapViewDelegate, UIGestureRecognizerDe
   // MARK: Variables
   
   /// The what3words API
-  let api = What3WordsV3(apiKey: "YourApiKey")
+  let api = What3WordsV4(apiKey: "YourApiKey")
 
   /// MapKit class that hold the graphical lines
   var polygons: MKMultiPolyline?

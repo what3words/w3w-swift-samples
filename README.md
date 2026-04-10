@@ -70,6 +70,9 @@ If you have a ViewController that has a map, `W3WMapHelper` provides convenience
 
 We created W3WMapView as a quick and dirty way to quickly get what3words functionality into your app.  Simply replace your MKMapView with W3WMapView, and your app should behave the same as before except it will draw what3words grid lines, and have some new functions available, like `addMarker(at: "filled.count.soap")`. Apple does not recommend deriving new objects from MKMapView as its interface could change in the future, so view this as a quick and dirty way to get the functionality into your app. The better approach would be to use `W3WMapHelper` which is designed to fit nicely into your `MKMapViewDelegate` conforming class, presumably a UIViewController.
 
+#### SwiftUI Map
+
+An example SwiftUI app that draws what3words gridlines and annotations on iOS' SwiftUI map view.  `MapViewModel` makes the API calls and holds `@Published` variables holding gridline and square data.  These data are bound with `MapView`, a SwiftUI map view.  The initial state is set up in `MapSwiftUIApp` where a list of three word addresses, along with a map centrepoint are specified.
 
 
 ## OCR (Optical Character Recognition)
@@ -77,7 +80,7 @@ We created W3WMapView as a quick and dirty way to quickly get what3words functio
 
 #### OcrComponent
 
-This demonstrates our `W3WOcrViewController` which uses the camera to scan for three-word addresses.  It uses our OCR systems which conform to our `W3WOcrProtocol`.  We include a class called `W3WOcrNative` which does and uses Apple's Vision Framework to employ hardware-accelerated optical character recognition.
+This demonstrates our `W3WOcrViewController` which uses the camera to scan for three-word addresses.  Included is a class called `W3WOcrNative` which uses Apple's Vision Framework to employ hardware-accelerated optical character recognition.
 
 ## Voice
 
@@ -85,13 +88,9 @@ This demonstrates our `W3WOcrViewController` which uses the camera to scan for t
 
 This example shows how to use our Voice API to recognise a spoken three word address.
 
-## Objective-C Compatible
+## Regex
 
-#### ObjectiveC
+### ThreeWordAddressRegex
 
-An example showing how to use an Autosuggest Component in Objective-C.
-
-#### ApiWrapperObjectiveC
-
-An exmaple showing how to use our API wrapper with Objective C.
+This example shows how to call our convenience functions that use regex to find three word addresses in text.  The functions demonstrated are: `isPossible3wa(text: String)`, `findPossible3wa(text: String)`, `isValid3wa(words: String)`.
 

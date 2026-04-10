@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import W3WSwiftCore
 import W3WSwiftApi
 import Combine
 
@@ -14,7 +15,7 @@ import Combine
 
 class Model: ObservableObject {
   
-  @Published var autosuggest = W3WAutosuggestHelper(What3WordsV3(apiKey: "YourApiKey"))
+  @Published var autosuggest = W3WAutoSuggestHelper(What3WordsV4(apiKey: "YourApiKey"))
   @Published var searchText = "///"
   @Published var error: W3WError?
   
@@ -24,7 +25,7 @@ class Model: ObservableObject {
   init() {
     // subscribe to searchText changes
     cancellable = $searchText.sink { text in
-      self.autosuggest.update(text: text, options: W3WOption.focus(self.somewhereInLondon)) { error in
+      self.autosuggest.update(text: text, options: W3WOption.focus(self.somewhereInLondon)) { suggestions, error in
         self.error = error
         self.objectWillChange.send()
       }
